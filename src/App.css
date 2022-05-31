@@ -1,38 +1,153 @@
-.App {
-  text-align: center;
+/* App组件的盒子 */
+.test {
+
+  width: 100%;
+  height: 300px;
+  /* background-color: yellow; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* background-color: #1e5ae1; */
+  /* background: url(./img//bg.png);
+  background-position: -184px 300px;
+  background-size: 126%;
+  opacity: 0.9; */
+  /* background: yellow; */
+}
+/* 关闭按钮的设置 */
+@keyframes example_L {
+  0%, 100% {transform: translateX(0);}
+
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+
+  20%, 40%, 60%, 80% {transform: translateX(5px);}
+}
+@keyframes example_R {
+  0%, 100% {transform: translateX(0px) rotateY(180deg)}
+
+  10%, 30%, 50%, 70%, 90% {transform: translateX(5px) rotateY(180deg);}
+
+  20%, 40%, 60%, 80% {transform: translateX(-5px) rotateY(180deg);}
+}
+@keyframes searchani {
+  0%, 100% {transform: scale(1);}
+  10%, 30%, 50%, 70%, 90% {transform: scale(0.9)}
+
+  20%, 40%, 60%, 80% {transform: scale(1.1)}
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  width: 400px;
+  height: 73px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+}
+.headertest {
+  width: 30px;
+  height: 70px;
+  background: url(./img//title_side.png);
+  background-size: cover;
+  animation-name: example_L;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.headertest2 {
+  width: 30px;
+  height: 70px;
+  background: url(./img//title_side.png);
+  background-size: cover;
+  transform: rotateY(180deg);
+  animation-name: example_R;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.headerlist {
+  width: 346px;
+  height: 84px; 
+  /* background-color: #1e5ae1; */
+}
+.headerList2 {
+  color: #ebf7ff;
+  background: url(./img/title_bg.png);
+  background-size: cover;
+  /* background-position: 11px 0px ; */
+  text-align: center;  
+  line-height: 84px;
+  font-size: 34px;
+  font-weight: bold;
+  text-shadow: 0px 0px 6px #1e5ae1; 
+}
+.headerList2 img {
+  float: left;
+  margin-top: 29px;
+}
+
+.search {
+  animation-name: searchani;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  cursor:pointer;
+}
+
+/* .big-box {
+  width: 100%;
+  height: 80%;
+  background-color: #1e5ae1;
+} */
+
+.input {
+  width: 215px;
+  height: 25px;
+  border: 4px rgb(33,148,233) solid;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translate(-43%);
+  z-index: 9999;
+  border-radius: 15px;
+
+}
+
+/* 显示箭头的设置 */
+.footer {
+  width: 193px;
+  height: 70px;
+  /* background-color: red; */
+  margin: 0 auto;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* background-color: blueviolet; */
 }
-
-.App-link {
-  color: #61dafb;
+.footer-left {
+  width: 30px;
+  height: 70px;
+  background: url('./img/title_side_h.png');
+  background-size: cover;
+  /* background-position: 41px -11px; */
+  animation-name: example_L;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer-right {
+  width: 30px;
+  height: 70px;
+  background: url('./img/title_side_h.png');
+  background-size: cover;
+  /* background-position: 41px -11px; */
+  transform: rotateY(180deg);
+  animation-name: example_R;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.footer-content {
+  width: 133px;
+  height: 70px;
+  background: url(./img//button_down.png);
+  background-size: cover;
+  cursor: pointer;
+  /* background-position: -85px -30px; */
 }

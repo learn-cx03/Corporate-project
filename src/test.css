@@ -1,0 +1,324 @@
+/* 轮播图组件的主体盒子 */
+.test-style {
+  width: 1400px;
+  height: 270px;
+  /* flex-grow: 1; */
+  /* background-color: red; */
+  position: relative;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  background-color: blue;
+  /* z-index: ; */
+  /* background-color: red; */
+  /* position: fixed; */
+}
+
+/* 左边箭头盒子 */
+/* .header-page {
+  width: 15px;
+  position: absolute; */
+
+  /* width: 10%; */
+  /* margin: 10 auto; */
+  /* flex-shrink: 0; */
+  /* flex-grow: 1; */
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  /* position: relative;   */
+  /* background-color: yellow; */
+  /* z-index: 99; */
+/* } */
+/* 左边箭头设置 */
+.page {
+  width: 47px;
+  height: 60px;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  /* margin-left: -13px; */
+  z-index: 99;
+  transform:  translateY(-50%) ;
+  background-image: url(./img/page.png);
+  cursor:pointer;
+}
+.page:hover {
+  background-image: url(./img/page_h.png);
+}
+/* 左边箭头边框 */
+/* .side1 {
+  margin-left: -60px;
+} */
+
+/* 轮播图的盒子主体 */
+.fatherBox {
+  width: 1208px;
+  /* flex-grow: 1; */
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  /* background-color: yellow; */
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+  perspective: 910px;
+}
+/* 轮播图盒子里面的文字 */
+.boxTest {
+  width: 324px;
+  height: 36px;
+  position: absolute;
+  background: rgba(0, 17, 46, 0.3);
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 36px;
+  bottom: 0px;
+  left: 0px;
+}
+@keyframes anim1 {
+  0% {transform: scale(1) rotateY(45deg) translate(0px);}
+  100% {transform: scale(1) rotateY(45deg) translate(265px);}
+}
+@keyframes anim1s {
+  0% {transform: scale(1) rotateY(45deg) translate(0px);}
+  100% {transform: scale(1) rotateY(45deg) translate(265px); }
+}
+@keyframes anim2 {
+  0% {transform:  scale(0.73) rotateY(45deg) translate(-200px);}
+  100% {transform:  scale(1) rotateY(45deg) translate(130px);}
+} 
+@keyframes anim2s {
+  0% {transform:  scale(0.73) rotateY(45deg) translate(-200px);}
+  100% {transform:  scale(1) rotateY(45deg) translate(130px);}
+}
+@keyframes anim3 {
+  0% {transform:  scale(0.6) rotateY(45deg) translate(-355px);}
+  100% {transform:  scale(1) rotateY(0deg) translate(0px);}
+}
+@keyframes anim3s {
+  0% {transform: scale(0.6) rotateY(45deg) translate(-355px);}
+  100% {transform: scale(1) rotateY(0deg) translate(0px); }
+}
+@keyframes anim4 {
+  0% {transform: scale(1) rotateY(0deg) translate(-400px);}
+  100% {transform: scale(1) rotateY(-45deg) translate(-130px);}
+}
+@keyframes anim4s {
+  0% {transform: scale(1) rotateY(0deg) translate(-400px);}
+  100% {transform: scale(1) rotateY(-45deg) translate(-130px);}
+}
+@keyframes anim5 {
+  0% {transform: scale(0.85) translate(-500px) rotateY(-45deg);}
+  100% {transform: scale(0.815) translate(-345px) rotateY(-45deg);}
+}
+@keyframes anim5s {
+  0% {transform: scale(0.85) translate(-500px) rotateY(-45deg);}
+  100% {transform: scale(0.815) translate(-345px) rotateY(-45deg);}
+}
+/* 各个盒子的设置 */
+.box1 {
+  /* background-color: yellow; */
+  position: relative;
+  transform: rotateY(45deg) translate(265px)  ;
+   /* border: 50px solid;
+   border-image: url(./img/frame.png) 40 51 53 52 round;  */
+}
+.box1::before {
+  content: '';
+  width: 421px;
+  height: 277px;
+  position: absolute;
+  top: -40px;
+  left: -49px;
+  background-image: url(./img/frame.png);
+  background-size: 100% 100%;
+}
+.box1_active {
+  animation: anim1 1.1s;
+}
+.box1_actives {
+  animation: anim1s 1.1s;
+}
+
+.box2 {
+
+  /* background-color: yellow; */
+  position: relative;
+  transform: rotateY(45deg) translate(130px);
+  /* border: 50px solid;
+  border-image: url(./img/frame.png) 40 51 53 52 round; */
+}
+.box2::before {
+  content: '';
+  width: 421px;
+  height: 277px;
+  position: absolute;
+  top: -40px;
+  left: -49px;
+  background-image: url(./img/frame.png);
+  background-size: 100% 100%;
+}
+.box2_active {
+  animation: anim2 1.1s;
+}
+.box2_actives {
+  animation: anim2s 1.1s;
+}
+.box3 {
+  /* background-color: yellow; */
+
+  position: relative;
+  transform:  translate(0px);
+  z-index: 100;
+  /* border: 50px solid;
+  border-image: url(./img/frame.png) 40 51 53 52 round; */
+}
+
+.box3::before {
+  content: '';
+  width: 421px;
+  height: 277px;
+  position: absolute;
+  top: -40px;
+  left: -49px;
+  background-image: url(./img/frame.png);
+  background-size: 100% 100%;
+}
+.box3_active {
+  animation: anim3 1s;
+}
+.box3_actives {
+  animation: anim3s 1s;
+}
+.box4 {
+  /* background-color: yellow; */
+
+  position: relative;
+  transform: rotateY(-45deg) translate(-130px);
+  /* border: 50px solid;
+  border-image: url(./img/frame.png) 40 51 53 52 round; */
+  z-index: 9;
+}
+.box4::before {
+  content: '';
+  width: 421px;
+  height: 277px;
+  position: absolute;
+  top: -40px;
+  left: -49px;
+  background-image: url(./img/frame.png);
+  background-size: 100% 100%;
+}
+.box4_active {
+  animation: anim4 1s;
+}
+.box4_actives {
+  animation: anim4s 1s;
+}
+
+.box5 {
+
+  /* background-color: yellow; */
+  position: relative;
+  transform: rotateY(-45deg) translate(-265px);
+  /* border: 50px solid;
+  border-image: url(./img/frame.png) 40 51 53 52 round; */
+}
+.box5::before {
+  content: '';
+  width: 421px;
+  height: 277px;
+  position: absolute;
+  top: -40px;
+  left: -49px;
+  background-image: url(./img/frame.png);
+  background-size: 100% 100%;
+}
+.box5_active {
+  animation: anim5 1s;
+}
+.box5_actives {
+  animation: anim5s 1s;
+}
+
+/* 右边箭头设置 由左边箭头旋转180形成 */
+/* .foot-page {
+  width: 47px; */
+  /* height: 60px; */
+  /* margin: 0 auto; */
+  /* flex-shrink: 0;  */
+  /* flex-grow: 1; */
+  /* margin: 10 auto; */
+  /* transform: rotateY(180deg);
+  margin-left: 10px; */
+  /* background-color: pink; */
+  /* z-index: 99;
+  cursor:pointer;
+} */
+.page_h {
+  width: 47px;
+  height: 60px;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  background-image: url(./img/page.png);
+  cursor:pointer;
+  transform:  rotateY(180deg) translateY(-50%);
+  z-index: 99;
+}
+.page::after {
+  content: '';
+  width: 60px;
+  height: 290px;
+  position: absolute;
+  left: -43px;
+  top: -113px;
+  background-image: url(./img//side1.png);
+}
+.page::before {
+  content: '';
+  width: 60px;
+  height: 290px;
+  position: absolute;
+  left: -41px;
+  top: -113px;
+  background-image: url(./img/side2.png);
+}
+.img_active {
+  animation: anim 0.5s;
+}
+.page_h:hover {
+  background-image: url(./img//page_h.png);
+}
+.page_h::after {
+  content: '';
+  width: 60px;
+  height: 290px;
+  position: absolute;
+  right: 29px;
+  top: -113px;
+  background-image: url(./img//side1.png);
+}
+.page_h::before {
+  content: '';
+  width: 60px;
+  height: 290px;
+  position: absolute;
+  right: 29px;
+  top: -113px;
+  background-image: url(./img/side2.png);
+}
+
+@keyframes show {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
