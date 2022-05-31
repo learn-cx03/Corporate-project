@@ -13,7 +13,7 @@ export default function App() {
   const [useShow, setUseShow] = useState(true)
   const [useInput, setUseInput] = useState(false);
   const [height, setHeight] = useState(0)
-  
+  const [useWidth, setUseWidth] = useState(0)
   const [useText, setUseText] = useState('123')
 
   //通过点击实现useShow变量的布尔值取反，从而操作组件的显示与隐藏
@@ -28,9 +28,11 @@ export default function App() {
     }
   }
   const changeInput = () => {
-    console.log('12')
-    setUseInput(!useInput)
-    setUseText(' ');
+    if (useWidth) {
+      setUseWidth(0)
+    } else {
+      setUseWidth(340)
+    }
   }
   const changeFocus = (e) => {
     setUseText(e.target.value)
@@ -48,16 +50,16 @@ export default function App() {
       <div className="big-box">
       {/* <div style={{visibility: useShow ? 'visible' : 'hidden'}} className="big-box"> */}
         {/* 关闭箭头 */}
+        {/* 用点击来控制className的切换从而改变图片图案 */}
         <div className={height ? 'footer' : 'header'} style={{transform:`translateY(${height}px)`,transition:'0.8s'}} >
           <div className={height ? 'footer-left' : 'headertest'} ></div>
           <div className='headerlist' style={{display: height ?  'none' : 'block'}}>
-          <div style={{visibility: useInput ? 'visible' : 'hidden'}}>
-            {/* <label htmlFor="q" className='box1'></label> */}
-            <input type="text" className="input" onBlur={changeFocus} id="q" />
-            {/* <img src={search} alt="" style={{float: 'left'}} /> */}
+          <div className='input_box' style={{width: `${useWidth}px`, height: "50px", transition: '0.8s'}}>
+            <input type="text" className='input'/>
+            <img src={search} className='input_img' onClick={changeInput}/>
           </div>
           <div className='headerList2'  style={{display: height ?  'none' : 'block'}}>
-            <img src={search} style={{width: "25px", height: "25px"}} onClick={changeInput} className="search" display={height ? 'none' : 'black'}/>
+            <img src={search} style={{width: "25px", height: "25px"}} onClick={changeInput} className="search"/>
             <div onClick={changeShow} display={height ? 'none' : 'black'} style={{cursor: "pointer"}}>关 闭</div>
            </div>
           </div>

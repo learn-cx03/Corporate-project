@@ -98,18 +98,30 @@
   height: 80%;
   background-color: #1e5ae1;
 } */
+.input_box {
+  position: absolute;
+  left:7%;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  z-index: 99;
+}
 
 .input {
-  width: 215px;
+  width: 95%;
   height: 25px;
-  border: 4px rgb(33,148,233) solid;
+  border: 4px rgb(171,211,252) solid;
   position: absolute;
-  left: 50%;
-  top: 5%;
-  transform: translate(-43%);
-  z-index: 9999;
+  top: 50%; 
+  transform: translateY(-50%);
   border-radius: 15px;
-
+}
+.input_img {
+  width: 29px;
+  height: 29px;
+  position: absolute;
+  top: 22%;
+  left: 89%;
 }
 
 /* 显示箭头的设置 */
