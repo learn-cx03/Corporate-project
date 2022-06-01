@@ -115,6 +115,7 @@
   top: 50%; 
   transform: translateY(-50%);
   border-radius: 15px;
+  outline:none;
 }
 .input_img {
   width: 29px;
