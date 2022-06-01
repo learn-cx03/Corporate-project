@@ -2,7 +2,7 @@ import React, { useState, useRef} from 'react'
 import './App.css'
 
 //引入轮播图组件
-import Test from './Test'
+import Test from './TestMy'
 
 import search from './img/search.png'
 

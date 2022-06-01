@@ -81,11 +81,11 @@
   100% {transform:  scale(1) rotateY(45deg) translate(130px);}
 }
 @keyframes anim3 {
-  0% {transform:  scale(0.6) rotateY(45deg) translate(-340px);}
+  0% {transform:  scale(0.6) rotateY(45deg) translate(-235px);}
   100% {transform:  scale(1) rotateY(0deg) translate(0px);}
 }
 @keyframes anim3s {
-  0% {transform: scale(0.6) rotateY(45deg) translate(-355px);}
+  0% {transform: scale(0.6) rotateY(45deg) translate(-235px);}
   100% {transform: scale(1) rotateY(0deg) translate(0px); }
 }
 @keyframes anim4 {
@@ -97,12 +97,11 @@
   100% {transform: scale(1) rotateY(-45deg) translate(-130px);}
 }
 @keyframes anim5 {
-  0% {transform: scale(0.85) translate(-500px) rotateY(-45deg);}
-  100% {transform: scale(0.8) translate(-345px) rotateY(-45deg);} 
+  0% {transform: scale(1) translate(-265px) rotateY(-45deg);}
+  /* 100% {transform: scale(1.1) translate(-265px) rotateY(-45deg);}  */
 }
 @keyframes anim5s {
-  0% {transform: scale(0.85) translate(-500px) rotateY(-45deg);}
-  100% {transform: scale(0.8) translate(-345px) rotateY(-45deg);}
+  0% {transform: scale(1) translate(-265px) rotateY(-45deg);}
 }
 /* 各个盒子的设置 */
 .box1 {
@@ -233,11 +232,11 @@
   background-size: 100% 100%;
 }
 .box5_active {
-  animation: anim5 1s;
-  animation-timing-function: ease;
+  animation: anim5 2s;
+  /* animation-timing-function: ease */
 }
 .box5_actives {
-  animation: anim5s 1s;
+  animation: anim5s 2s;
 }
 
 /* 右边箭头设置 由左边箭头旋转180形成 */

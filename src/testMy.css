@@ -35,17 +35,7 @@
   /* z-index: 99; */
 /* } */
 /* 左边箭头设置 */
-.page {
-  width: 47px;
-  height: 60px;
-  position: absolute;
-  left: 5%;
-  top: 50%; 
-  z-index: 99;
-  transform:  translateY(-50%) ;
-  background-image: url(./img/page.png);
-  cursor:pointer;
-}
+
 .page:hover {
   background-image: url(./img/page_h.png);
 }
@@ -57,8 +47,7 @@
 /* 轮播图的盒子主体 */
 .fatherBox {
   /* flex-grow: 1; */
-  width: 324px;
-  height: 184px;
+  width: 30vw;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -67,20 +56,20 @@
   /* background-color: yellow; */
   justify-content: center;
   align-items: center;
-  /* background-color: aqua; */
+  background-color: aqua;
   perspective: 910px;
   transform-style: preserve-3d;
 }
 /* 轮播图盒子里面的文字 */
 .boxTest {
-  width: 324px;
-  height: 36px;
+  width: 22.5vw;
+  height: 4vh;
   position: absolute;
   background: rgba(0, 17, 46, 0.3);
   color: #ffffff;
   font-size: 16px;
   text-align: center;
-  line-height: 36px;
+  line-height: 4vh;
   bottom: 0px;
   left: 0px;
 }
@@ -97,11 +86,11 @@
 }
 .box1::before {
   content: '';
-  width: 421px;
-  height: 277px;
+  width: 29.5vw;
+  height: 19.3vw;
   position: absolute;
-  top: -40px;
-  left: -49px;
+  top: -22%;
+  left: -16%;
   background-image: url(./img/frame.png);
   background-size: 100% 100%;
 }
@@ -118,12 +107,11 @@
 }
 .box2::before {
   content: '';
-  width: 421px;
-  height: 277px;
+  width: 29.5vw;
+  height: 19.3vw;
   position: absolute;
-  
-  top: -40px;
-  left: -49px;
+  top: -22%;
+  left: -16%;
   background-image: url(./img/frame.png);
   background-size: 100% 100%;
 }
@@ -142,11 +130,11 @@
 
 .box3::before {
   content: '';
-  width: 421px;
-  height: 277px;
+  width: 29.5vw;
+  height: 19.3vw;
   position: absolute;
-  top: -40px;
-  left: -49px;
+  top: -22%;
+  left: -16%;
   background-image: url(./img/frame.png);
   background-size: 100% 100%;
 }
@@ -163,11 +151,11 @@
 }
 .box4::before {
   content: '';
-  width: 421px;
-  height: 277px;
+  width: 29.5vw;
+  height: 19.3vw;
   position: absolute;
-  top: -40px;
-  left: -49px;
+  top: -22%;
+  left: -16%;
   background-image: url(./img/frame.png);
   background-size: 100% 100%;
 }
@@ -186,11 +174,11 @@
 }
 .box5::before {
   content: '';
-  width: 421px;
-  height: 277px;
+  width: 29.5vw;
+  height: 19.3vw;
   position: absolute;
-  top: -40px;
-  left: -49px;
+  top: -22%;
+  left: -16%;
   background-image: url(./img/frame.png);
   background-size: 100% 100%;
 }
@@ -209,35 +197,52 @@
   /* z-index: 99;
   cursor:pointer;
 } */
+.page{
+  width: 3.264vw;
+  height: 4.1667vw;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  background-image: url(./img/page.png);
+  background-size: cover;
+  cursor:pointer;
+  transform:   translateY(-50%);
+  z-index: 99;
+}
 .page_h {
-  width: 47px;
-  height: 60px;
+  width: 3.264vw;
+  height: 4.1667vw;
   position: absolute;
   right: 5%;
   top: 50%;
   background-image: url(./img/page.png);
+  background-size: cover;
   cursor:pointer;
   transform:  rotateY(180deg) translateY(-50%);
   z-index: 99;
 }
 .page::after {
   content: '';
-  width: 60px;
-  height: 290px;
+  width: 4.166vw;
+  height: 20.138vw;
   position: absolute;
-  left: -43px;
-  top: -113px;
+  left: -3.2vw;
+  top: 50%;
+  transform: translateY(-50%);
   background-image: url(./img//side1.png);
+  background-size: cover;
   pointer-events:none
 }
 .page::before {
   content: '';
-  width: 60px;
-  height: 290px;
+  width: 4.166vw;
+  height: 20.138vw;
   position: absolute;
-  left: -41px;
-  top: -113px;
+  left: -3.2vw;
+  top: 50%;
+  transform: translateY(-50%);
   background-image: url(./img/side2.png);
+  background-size: cover;
   pointer-events:none
 }
 .img_active {
@@ -248,22 +253,26 @@
 }
 .page_h::after {
   content: '';
-  width: 60px;
-  height: 290px;
+  width: 4.166vw;
+  height: 20.138vw;
   position: absolute;
-  right: 29px;
-  top: -113px;
+  right: 2vw;
+  top: 50%;
+  transform: translateY(-50%);
   background-image: url(./img//side1.png);
+  background-size: cover;
   pointer-events:none
 }
 .page_h::before {
   content: '';
-  width: 60px;
-  height: 290px;
+  width: 4.166vw;
+  height: 20.138vw;
   position: absolute;
-  right: 29px;
-  top: -113px;
+  right: 2vw;
+  top: 50%;
+  transform: translateY(-50%);
   background-image: url(./img/side2.png);
+  background-size: cover;
   pointer-events:none
 }
 

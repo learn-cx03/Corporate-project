@@ -4,7 +4,7 @@ import img2 from './img/dog.jpg'
 import img3 from './img/cat.jpg'
 import img4 from './img/cat2.jpg'
 import img5 from './img/cat3.jpg'
-import './test.css'
+import './test1.css'
 import { changeSlide } from 'react-slick/lib/utils/innerSliderUtils'
 
 
@@ -12,7 +12,7 @@ export default function Test() {
   //定义存放图片和图片里文字的两个数组
   const showImg = [img1, img2, img3, img4, img5, img3, img2, img1, img4]
   const newArry = []
-  //通过for循环遍历将循环得出的dom元素做个一个数组
+  //通过for循环遍历将循环得出的dom元素做个一个数组.
   for (let i = 0; i < showImg.length; i++) {
     newArry.push(
       <div>
@@ -30,14 +30,14 @@ export default function Test() {
       document.getElementsByClassName('box1')[0].className = 'box1 box1_active'
       document.getElementsByClassName('box2') [0].className = 'box2 box2_active'
       document.getElementsByClassName('box3') [0].className = 'box3 box3_active'
-      // document.getElementsByClassName('box4') [0].className = 'box4 box4_active'
-      // document.getElementsByClassName('box5')[0].className = 'box5 box5_active'
+      document.getElementsByClassName('box4') [0].className = 'box4 box4_active'
+      document.getElementsByClassName('box5')[0].className = 'box5 box5_active'
     } else {
       document.getElementsByClassName('box1')[0].className = 'box1 box1_actives'
       document.getElementsByClassName('box2')[0].className = 'box2 box2_actives'
       document.getElementsByClassName('box3') [0].className = 'box3 box3_actives'
-      // document.getElementsByClassName('box4') [0].className = 'box4 box4_actives'
-      // document.getElementsByClassName('box5')[0].className = 'box5 box5_actives'
+      document.getElementsByClassName('box4') [0].className = 'box4 box4_actives'
+      document.getElementsByClassName('box5')[0].className = 'box5 box5_actives'
     }
 
     setIsShow(!isShow)

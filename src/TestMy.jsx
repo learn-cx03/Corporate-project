@@ -10,21 +10,21 @@ import './testMy.css'
 export default function Test() {
   //定义存放图片和图片里文字的两个数组
   const forms = [
-    'translate3d(-450px, 0, -100px) rotateY(45deg)',
-    'translate3d(-230px, 0, 0) rotateY(45deg) ',
+    'translate3d(-31.25vw, 0, -100px) rotateY(45deg)',
+    'translate3d(-15.97vw, 0, 0) rotateY(45deg) ',
     'translate3d(0, 0, 100px)',
-    'translate3d(230px, 0, 0) rotateY(-45deg) ',
-    'translate3d(450px, 0, -100px) rotateY(-45deg)',
+    'translate3d(15.97vw, 0, 0) rotateY(-45deg) ',
+    'translate3d(31.25vw, 0, -100px) rotateY(-45deg)',
   ]
   const [transfrom, setTransform] = useState(forms)
   // console.log(transfrom) 
-  const showImg = [img1, img2, img3, img4, img5, img3]
+  const showImg = [img1, img2, img3, img4, img5, img3, img1, img2, img2]
   const newArry = []
   //通过for循环遍历将循环得出的dom元素做个一个数组
   for (let i = 0; i < showImg.length; i++) {
     newArry.push(
       <div>
-           <img src={showImg[i]} style={{width: "324px", height: "184px"}}/>
+           <img src={showImg[i]} style={{width: "22.5vw", height: "12.78vw"}}/>
             <div className='boxTest'>{i}</div>
       </div>
     )
@@ -33,18 +33,29 @@ export default function Test() {
   //使用useState对数组进行操作
   const [showList, setShowList] = useState(newArry)
   const rightRotate = () => {
+
     let text = transfrom[0]
     let temp = transfrom.slice(1, transfrom.length)
     temp.push(text)
     setTransform(temp)
+   
     // console.log(temp)
   }
   const leftRotate = () => {
+    let i = 0;
     let text = transfrom[transfrom.length - 1]
     let temp = transfrom.slice(0, transfrom.length - 1)
     temp.unshift(text)
     setTransform(temp)
     // console.log(temp)
+    if (newArry.length > 5) {
+      ChangeLast(i)
+      if (i < 5) {
+        i++
+      } else {
+        i = 0
+      }
+    } 
   }
   // const [isShow, setIsShow] = useState('true')
   //给每个图片盒子添加上动画，在切换盒子的时候使用
@@ -52,14 +63,13 @@ export default function Test() {
 //通过函数来实现对数组的里面元素的重排，从而实现对dom元素的位置更改，实现轮播的效果
 
 //ChangeLast（左箭头函数） 是通过函数将数组先前一位
-  const ChangeLast = () => {
-    // let text = showList[0]
-    // let temp = showList.slice()
-    // temp.splice(0, 1)
-    // temp.push(text)
-    // setShowList(temp)
-    // console.log(temp)
-
+  const ChangeLast = (i) => {
+    console.log('123')
+    let temp = showList.slice()
+    temp[i] = showList[i + 5]
+    temp[i + 5] = showList[i]
+    setShowList(temp)
+    // leftRotate()
   }
 
 //ChangeNext（右箭头函数） 是通过函数将数组向前一位
@@ -69,7 +79,6 @@ export default function Test() {
     temp.splice(temp.length - 1, 1)
     temp.unshift(text)
     setShowList(temp)
-    rightRotate()
   }
 
 //ChangeList（点击图片排序到中心） 是通过函数还有传递过的index位置来对数组进行重新排序，从而实现点击的dom元素都在轮播图的中间的效果

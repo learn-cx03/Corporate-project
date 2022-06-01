@@ -65,44 +65,43 @@
   left: 0px;
 }
 @keyframes anim1 {
-  0% {transform: scale(1) rotateY(45deg) translate(265px);}
-  100% {transform: scale(1.2) rotateY(45deg) translate(432px);}
+  /* 100% {transform: rotateY(45deg) translateX(-130px)} */
 }
 @keyframes anim1s {
-  0% {transform: scale(1) rotateY(45deg) translate(265px);}
-  100% {transform: scale(1.2) rotateY(45deg) translate(432px); }
+  /* 100% {transform: rotateY(45deg) translateX(-130px)} */
 }
 @keyframes anim2 {
-  0% {transform:  scale(1) rotateY(45deg) translate(130px);}
-  100% {transform:  scale(1) rotateY(0deg) translate(323px);}
+  0% {transform: scale(0.7) rotateY(45deg) translateX(-100px)}
+  /* 100% {transform:  scale(1) rotateY(45deg) translate(130px);} */
 } 
 @keyframes anim2s {
-  0% {transform:  scale(1) rotateY(45deg) translate(130px);}
-  100% {transform:  scale(1) rotateY(0deg) translate(323px);}
+  0% {transform:  scale(0.7) rotateY(45deg) translateX(-100px)}
+  /* 100% {transform:  scale(1) rotateY(45deg) translate(130px);} */
 }
 @keyframes anim3 {
-  0% {transform:  scale(1) rotateY(0deg) translate(0px);}
-  100% {transform:  scale(0.8) rotateY(-45deg) translate(130px);}
+  0% {transform: rotateY(0deg);}
+  100% {transform:   rotateY(360deg) ;}
+  /* 100% {transform:  scale(1) rotateY(0deg) translate(0px);} */
 }
 @keyframes anim3s {
-  0% {transform: scale(0.6) rotateY(45deg) translate(-355px);}
-  100% {transform: scale(1) rotateY(0deg) translate(0px); }
+  0% {transform: rotateY(0deg);}
+  100% {transform: rotateY(360deg) ;}
+  /* 100% {transform: scale(1) rotateY(0deg) translate(0px); } */
 }
 @keyframes anim4 {
-  0% {transform: scale(1) rotateY(0deg) translate(-400px);}
-  100% {transform: scale(1) rotateY(-45deg) translate(-130px);}
+  0% {transform: scale(1) rotateY(0deg) translate(-100px);}
+  /* 100% {transform: scale(1) rotateY(-45deg) translate(-130px);} */
 }
 @keyframes anim4s {
-  0% {transform: scale(1) rotateY(0deg) translate(-400px);}
-  100% {transform: scale(1) rotateY(-45deg) translate(-130px);}
+  0% {transform: scale(1) rotateY(0deg) translate(-100px);}
+  /* 100% {transform: scale(1) rotateY(-45deg) translate(-130px);} */
 }
 @keyframes anim5 {
-  0% {transform: scale(0.85) translate(-500px) rotateY(-45deg);}
-  100% {transform: scale(0.8) translate(-345px) rotateY(-45deg);} 
+  0% {transform: scale(1) translate(-100px) rotateY(-45deg);}
+  /* 100% {transform: scale(1.1) translate(-265px) rotateY(-45deg);}  */
 }
 @keyframes anim5s {
-  0% {transform: scale(0.85) translate(-500px) rotateY(-45deg);}
-  100% {transform: scale(0.8) translate(-345px) rotateY(-45deg);}
+  0% {transform: scale(1) translate(-100px) rotateY(-45deg);}
 }
 /* 各个盒子的设置 */
 .box1 {
@@ -111,6 +110,7 @@
   transform: rotateY(45deg) translate(265px)  ;
    /* border: 50px solid;
    border-image: url(./img/frame.png) 40 51 53 52 round;  */
+   transition: transform 2s;
 }
 .box1::before {
   content: '';
@@ -123,11 +123,11 @@
   background-size: 100% 100%;
 }
 .box1_active {
-  animation: anim1 2s;
-  /* animation-timing-function: ease; */
+  animation: anim1 1s;
+  animation-timing-function: ease;
 }
 .box1_actives {
-  animation: anim1s 2s;
+  animation: anim1s 1s;
 }
 
 .box2 {
@@ -135,6 +135,7 @@
   /* background-color: yellow; */
   position: relative;
   transform: rotateY(45deg) translate(130px);
+  transition: transform 2s;
   /* border: 50px solid;
   border-image: url(./img/frame.png) 40 51 53 52 round; */
 }
@@ -149,11 +150,11 @@
   background-size: 100% 100%;
 }
 .box2_active {
-  animation: anim2 1.8s;
+  animation: anim2 1s;
   animation-timing-function: ease;
 }
 .box2_actives {
-  animation: anim2s 1.8s;
+  animation: anim2s 1s;
 }
 .box3 {
   /* background-color: yellow; */
@@ -177,11 +178,11 @@
   background-size: 100% 100%;
 }
 .box3_active {
-  animation: anim3 2s;
-  /* animation-timing-function: ease; */
+  animation: anim3 1s;
+  animation-timing-function: ease;
 }
 .box3_actives {
-  animation: anim3s 2s;
+  animation: anim3s 1s;
 }
 .box4 {
   /* background-color: yellow; */
@@ -232,7 +233,7 @@
 }
 .box5_active {
   animation: anim5 1s;
-  animation-timing-function: ease;
+  /* animation-timing-function: ease */
 }
 .box5_actives {
   animation: anim5s 1s;
