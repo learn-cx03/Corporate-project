@@ -105,16 +105,16 @@ export default function Test() {
 
 // ChangeList（点击图片排序到中心） 是通过函数还有传递过的index位置来对数组进行重新排序，从而实现点击的dom元素都在轮播图的中间的效果
   const ChangeList = (index) => {
-
+    let num = 2 + i
     let tempList = showList.slice()
-    if (index > 2) {  
-      let tempIndex = index -2
+    if (index > num) {  
+      let tempIndex = index - num
       let text = showList.slice(0, tempIndex)  
       tempList.splice(0, tempIndex)
       tempList = tempList.concat(text)
     } 
-    if (index < 2) {
-      let tempIndex = 2 - index
+    if (index < num) {
+      let tempIndex = num - index
       let text = showList.slice(-tempIndex)
       tempList.splice(tempList.length-tempIndex, tempIndex)
       tempList = text.concat(tempList)
