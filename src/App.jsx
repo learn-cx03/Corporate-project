@@ -2,7 +2,7 @@ import React, { useState, useRef} from 'react'
 import './App1.css'
 
 //引入轮播图组件
-import Test from './Carousel'
+import Carousel from './Carousel'
 
 import search from './img/search.png'
 
@@ -43,10 +43,10 @@ export default function App() {
           <div className='headerlist' style={{display: height ?  'none' : 'block'}}>
           <div className='input_box' style={{width: `${useWidth}px`, height: "50px", transition: '0.8s'}}>
             <input type="text" className='input' ref={inputE1}/>
-            <img src={search} className='input_img' onClick={changeInput} />
+            <img src={search} className='input_img' onClick={changeInput} alt="没有该图片"/>
           </div>
           <div className='headerList2'  style={{display: height ?  'none' : 'block'}}>
-            <img src={search} style={{width: "25px", height: "25px"}} onClick={changeInput} className="search"/>
+            <img src={search} style={{width: "25px", height: "25px"}} onClick={changeInput} className="search" alt="没有该图片"/>
             <div onClick={changeShow} display={height ? 'none' : 'black'} style={{cursor: "pointer"}}>关 闭</div>
            </div>
           </div>
@@ -56,7 +56,7 @@ export default function App() {
      
         {/* 引用轮播图组件的位置 */}
         <div className='content' style={{transform:`translateY(${height}px)`,overflow:'hidden',transition:'0.8s'}}>
-          <Test />
+          <Carousel />
         </div>
       </div>  
       {/* 展开箭头 */}

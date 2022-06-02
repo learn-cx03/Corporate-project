@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+//测试图片
 import img1 from './img/test.jpg'
 import img2 from './img/dog.jpg'
 import img3 from './img/cat.jpg'
@@ -33,7 +34,7 @@ export default function Test() {
   for (let i = 0; i < showImg.length; i++) {
     newArry.push(
       <div>
-           <img src={showImg[i]} style={{width: "22.5vw", height: "12.78vw"}}/>
+           <img src={showImg[i]} style={{width: "22.5vw", height: "12.78vw"}} alt="没有找到该图片"/>
             <div className='boxTest'>{newList[i]}</div>
       </div>
     )
@@ -132,42 +133,12 @@ export default function Test() {
       <div className='fatherBox' >
       {showList.map((item, index) => {
           if (index < 5) { 
-            if (index === 0) {
               return (
-                <div className="box1" key={index} onClick={() => ChangeList(index)} style={{transform: transfrom[index]}}>
+                <div className={`box${index + 1}`} key={index} onClick={() => ChangeList(index)} style={{transform: transfrom[index]}}>
                  {item}
                 </div>
               )
             }
-            if (index === 1) {
-              return (
-                <div className="box2" key={index} onClick={() => ChangeList(index)} style={{transform: transfrom[index]}}>
-                  {item}
-                </div>
-              )
-            }
-            if (index === 2) {
-              return (
-                <div className="box3" key={index} onClick={() => ChangeList(index)} style={{transform: transfrom[index]}}>
-                  {item}
-                </div>
-              )
-            }
-            if (index === 3) {
-              return (
-                <div className="box4" key={index} onClick={() => ChangeList(index)} style={{transform: transfrom[index]}}>
-                  {item}
-                </div>
-              )
-            }
-            if (index === 4) {
-              return (
-                <div className="box5" key={index} onClick={() => ChangeList(index)} style={{transform: transfrom[index]}}>
-                 {item}
-                </div>
-              )
-            }
-          }
         })}
       </div>
     {/* 右边的箭头 */}
