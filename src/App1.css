@@ -15,7 +15,7 @@
   /* opacity: 0.9; */
   /* background: yellow; */
 }
-.test::before {
+/* .test::before {
   content: '';
   position: absolute;
   left: 0;
@@ -25,8 +25,12 @@
   background: url(./img/bg.png) center no-repeat;
   background-size: 100% 100%;
   pointer-events: none;
+} */
+.big-box {
+  background: url(./img//bg.png) center no-repeat;
+  background-position: 0px 10px;
+  background-size: cover
 }
-
 /* 关闭按钮的设置 */
 .header {
   width: 400px;

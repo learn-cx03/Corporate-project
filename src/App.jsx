@@ -1,5 +1,5 @@
 import React, { useState, useRef} from 'react'
-import './App1.css'
+import './App.css'
 
 //引入轮播图组件
 import Carousel from './Carousel'
@@ -34,11 +34,11 @@ export default function App() {
   return (
     <div className='test'>
       {/* 通过visibility来实现组件的显示与隐藏 */}
-      <div className="big-box">
+      <div className="big-box" style={{transform:`translateY(${height}px)`,transition:'0.8s'}}>
       {/* <div style={{visibility: useShow ? 'visible' : 'hidden'}} className="big-box"> */}
         {/* 关闭箭头 */}
         {/* 用点击来控制className的切换从而改变图片图案 */}
-        <div className={height ? 'footer' : 'header'} style={{transform:`translateY(${height}px)`,transition:'0.8s'}} >
+        <div className={height ? 'footer' : 'header'}  >
           <div className={height ? 'footer-left' : 'headertest'} ></div>
           <div className='headerlist' style={{display: height ?  'none' : 'block'}}>
           <div className='input_box' style={{width: `${useWidth}px`, height: "50px", transition: '0.8s'}}>
@@ -55,7 +55,7 @@ export default function App() {
         </div>
      
         {/* 引用轮播图组件的位置 */}
-        <div className='content' style={{transform:`translateY(${height}px)`,overflow:'hidden',transition:'0.8s'}}>
+        <div className='content' style={{overflow:'hidden'}}>
           <Carousel />
         </div>
       </div>  

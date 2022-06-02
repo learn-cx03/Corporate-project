@@ -7,7 +7,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.test::before {
+
+.big-box::before {
   content: '';
   position: absolute;
   left: 0;
@@ -18,7 +19,6 @@
   background-size: 100% 100%;
   pointer-events: none;
 }
-
 /* header的主体结构和样式的设计 */
 .header {
   width: 400px;
@@ -34,7 +34,7 @@
   background: url(./img//title_side.png);
   background-size: cover;
   animation-name: example_L;
-  animation-duration: 4s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
 }
 .headertest2 {
@@ -44,12 +44,13 @@
   background-size: cover;
   transform: rotateY(180deg);
   animation-name: example_R;
-  animation-duration: 4s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
 }
 .headerlist {
   width: 346px;
   height: 84px; 
+  position: relative;
 }
 .headerList2 {
   color: #ebf7ff;
@@ -76,7 +77,6 @@
 
 .input_box {
   position: absolute;
-  left:7%;
   top: 50%;
   transform: translateY(-50%);
   overflow: hidden;
@@ -89,7 +89,7 @@
   border: 4px rgb(171,211,252) solid;
   position: absolute;
   top: 50%; 
-  transform: translateY(-50%);
+  transform: translateY(-47%);
   border-radius: 15px;
   outline:none;
 }
@@ -97,7 +97,7 @@
   width: 29px;
   height: 29px;
   position: absolute;
-  top: 22%;
+  top: 24%;
   left: 89%;
 }
 
@@ -134,4 +134,19 @@
   background: url(./img//button_down.png);
   background-size: cover;
   cursor: pointer;
+}
+@keyframes example_L {
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-5px);}
+  20%, 40%, 60%, 80% {transform: translateX(5px);}
+}
+@keyframes example_R {
+  0%, 100% {transform: translateX(0px) rotateY(180deg)}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(5px) rotateY(180deg);}
+  20%, 40%, 60%, 80% {transform: translateX(-5px) rotateY(180deg);}
+}
+@keyframes searchani {
+  0%, 100% {transform: scale(1);}
+  10%, 30%, 50%, 70%, 90% {transform: scale(0.9)}
+  20%, 40%, 60%, 80% {transform: scale(1.1)}
 }
