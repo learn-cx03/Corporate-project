@@ -55,7 +55,7 @@ export default function App() {
         </div>
      
         {/* 引用轮播图组件的位置 */}
-        <div className='content' style={{overflow:'hidden'}}>
+        <div className='content' style={{}}>
           <Carousel />
         </div>
       </div>  
