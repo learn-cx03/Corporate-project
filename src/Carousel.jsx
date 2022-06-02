@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import img1 from './img/test.jpg'
 import img2 from './img/dog.jpg'
 import img3 from './img/cat.jpg'
 import img4 from './img/cat2.jpg'
 import img5 from './img/cat3.jpg'
-import './testMy.css'
+import img6 from './img/book.jpg'
+import img7 from './img/book2.jpg'
+import img8 from './img/book3.jpg'
+import img9 from './img/flower.jpg'
+import './Carousel.css'
 
 
 export default function Test() {
-  //定义存放图片和图片里文字的两个数组
+  //定义一个forms数组用来控制translate的变化从而达到轮播图左右切换的效果
   const forms = [
     'translate3d(-31.25vw, 0, -100px) rotateY(45deg)',
     'translate3d(-15.97vw, 0, 0) rotateY(45deg) ',
@@ -16,23 +20,30 @@ export default function Test() {
     'translate3d(15.97vw, 0, 0) rotateY(-45deg) ',
     'translate3d(31.25vw, 0, -100px) rotateY(-45deg)',
   ]
+  //给每个图片盒子添加上动画，在切换盒子的时候使用
+  //通过函数来实现对数组的里面元素的重排，从而实现对dom元素的位置更改，实现轮播的效果
   const [transfrom, setTransform] = useState(forms)
   // console.log(transfrom) 
-  const showImg = [img1, img2, img3, img4, img5, img3, img1, img2, img2]
+  //列表图片存放位置
+  const showImg = [img1, img2, img3, img4, img5, img6, img7, img8, img9]
+  //列表文字存放位置
+  const newList = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+  //等会存放 showImg 和 newList 生成的dom元素的列表
   const newArry = []
-  //通过for循环遍历将循环得出的dom元素做个一个数组
   for (let i = 0; i < showImg.length; i++) {
     newArry.push(
       <div>
            <img src={showImg[i]} style={{width: "22.5vw", height: "12.78vw"}}/>
-            <div className='boxTest'>{i}</div>
+            <div className='boxTest'>{newList[i]}</div>
       </div>
     )
   }
   // console.log(newArry)
   //使用useState对数组进行操作
   const [showList, setShowList] = useState(newArry)
+  //生成控制后面轮播图的i变量
   const [i, setI] = useState(0)
+  // 右边箭头的点击函数
   const rightRotate = () => {
     let text = transfrom[0]
     let temp = transfrom.slice(1, transfrom.length)
@@ -42,6 +53,7 @@ export default function Test() {
       ChangeRight(i)
     }
   }
+  // 左边箭头的点击函数
   const leftRotate = () => {
     let text = transfrom[transfrom.length - 1]
     let temp = transfrom.slice(0, transfrom.length - 1)
@@ -52,16 +64,13 @@ export default function Test() {
       ChangeLeft(i)
     }
   }
-  // const [isShow, setIsShow] = useState('true')
-  //给每个图片盒子添加上动画，在切换盒子的时候使用
 
-//通过函数来实现对数组的里面元素的重排，从而实现对dom元素的位置更改，实现轮播的效果
 
-//ChangeLast（左箭头函数） 是通过函数将数组先前一位
+  // ChangeLast（左箭头函数） 来记忆之前点击过的盒子的位置
   const ChangeLeft = (i) => {
     console.log(i)
     let temp = showList.slice()
-    temp[i] = showList[5  ]
+    temp[i] = showList[5]
     temp.splice(5, 1)
     temp.push(showList[i])
     setShowList(temp)
@@ -73,8 +82,7 @@ export default function Test() {
       setI(0)
     }
   }
-
-//ChangeNext（右箭头函数） 是通过函数将数组向前一位
+  // ChangeRight（右箭头函数） 来记忆之前点击的盒子的位置
   const ChangeRight = (i) => {
     console.log(i)
     if (i == 0) {
@@ -94,7 +102,7 @@ export default function Test() {
     }
   }
 
-//ChangeList（点击图片排序到中心） 是通过函数还有传递过的index位置来对数组进行重新排序，从而实现点击的dom元素都在轮播图的中间的效果
+// ChangeList（点击图片排序到中心） 是通过函数还有传递过的index位置来对数组进行重新排序，从而实现点击的dom元素都在轮播图的中间的效果
   const ChangeList = (index) => {
 
     let tempList = showList.slice()
@@ -124,35 +132,35 @@ export default function Test() {
       <div className='fatherBox' >
       {showList.map((item, index) => {
           if (index < 5) { 
-            if (index == 0) {
+            if (index === 0) {
               return (
                 <div className="box1" key={index} onClick={() => ChangeList(index)} style={{transform: transfrom[index]}}>
                  {item}
                 </div>
               )
             }
-            if (index == 1) {
+            if (index === 1) {
               return (
                 <div className="box2" key={index} onClick={() => ChangeList(index)} style={{transform: transfrom[index]}}>
                   {item}
                 </div>
               )
             }
-            if (index == 2) {
+            if (index === 2) {
               return (
                 <div className="box3" key={index} onClick={() => ChangeList(index)} style={{transform: transfrom[index]}}>
                   {item}
                 </div>
               )
             }
-            if (index == 3) {
+            if (index === 3) {
               return (
                 <div className="box4" key={index} onClick={() => ChangeList(index)} style={{transform: transfrom[index]}}>
                   {item}
                 </div>
               )
             }
-            if (index == 4) {
+            if (index === 4) {
               return (
                 <div className="box5" key={index} onClick={() => ChangeList(index)} style={{transform: transfrom[index]}}>
                  {item}

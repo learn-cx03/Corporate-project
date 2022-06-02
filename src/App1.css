@@ -1,11 +1,19 @@
-/* App组件的外层盒子 */
+/* App组件的盒子 */
 .test {
+
   width: 100%;
   height: 350px;
+  /* background-color: yellow; */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* background-color: #1e5ae1; */
+  /* background: url(./img//bg.png) center no-repeat;
+  background-position: 0px 10px;
+  background-size: cover */
+  /* opacity: 0.9; */
+  /* background: yellow; */
 }
 .test::before {
   content: '';
@@ -19,7 +27,7 @@
   pointer-events: none;
 }
 
-/* header的主体结构和样式的设计 */
+/* 关闭按钮的设置 */
 .header {
   width: 400px;
   height: 73px;
@@ -50,11 +58,13 @@
 .headerlist {
   width: 346px;
   height: 84px; 
+  /* background-color: #1e5ae1; */
 }
 .headerList2 {
   color: #ebf7ff;
   background: url(./img/title_bg.png);
   background-size: cover;
+  /* background-position: 11px 0px ; */
   text-align: center;  
   line-height: 84px;
   font-size: 34px;
@@ -66,7 +76,6 @@
   margin-top: 29px;
 }
 
-/* header里面的搜索框和文本框的设置 */
 .search {
   animation-name: searchani;
   animation-duration: 5s;
@@ -74,6 +83,11 @@
   cursor:pointer;
 }
 
+/* .big-box {
+  width: 100%;
+  height: 80%;
+  background-color: #1e5ae1;
+} */
 .input_box {
   position: absolute;
   left:7%;
@@ -101,19 +115,22 @@
   left: 89%;
 }
 
-/* 显示黄色箭头的设置 */
+/* 显示箭头的设置 */
 .footer {
   width: 193px;
   height: 70px;
+  /* background-color: red; */
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  /* background-color: blueviolet; */
 }
 .footer-left {
   width: 30px;
   height: 70px;
   background: url('./img/title_side_h.png');
   background-size: cover;
+  /* background-position: 41px -11px; */
   animation-name: example_L;
   animation-duration: 4s;
   animation-iteration-count: infinite;
@@ -123,6 +140,7 @@
   height: 70px;
   background: url('./img/title_side_h.png');
   background-size: cover;
+  /* background-position: 41px -11px; */
   transform: rotateY(180deg);
   animation-name: example_R;
   animation-duration: 4s;
@@ -134,4 +152,5 @@
   background: url(./img//button_down.png);
   background-size: cover;
   cursor: pointer;
+  /* background-position: -85px -30px; */
 }

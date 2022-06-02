@@ -1,8 +1,8 @@
 import React, { useState, useRef} from 'react'
-import './App.css'
+import './App1.css'
 
 //引入轮播图组件
-import Test from './TestMy'
+import Test from './Carousel'
 
 import search from './img/search.png'
 
