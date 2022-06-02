@@ -32,30 +32,25 @@ export default function Test() {
   // console.log(newArry)
   //使用useState对数组进行操作
   const [showList, setShowList] = useState(newArry)
+  const [i, setI] = useState(0)
   const rightRotate = () => {
-
     let text = transfrom[0]
     let temp = transfrom.slice(1, transfrom.length)
     temp.push(text)
     setTransform(temp)
-   
-    // console.log(temp)
+    if (showList.length > 5) {
+      ChangeRight(i)
+    }
   }
   const leftRotate = () => {
-    let i = 0;
     let text = transfrom[transfrom.length - 1]
     let temp = transfrom.slice(0, transfrom.length - 1)
     temp.unshift(text)
     setTransform(temp)
     // console.log(temp)
-    if (newArry.length > 5) {
-      ChangeLast(i)
-      if (i < 5) {
-        i++
-      } else {
-        i = 0
-      }
-    } 
+    if (showList.length > 5) {
+      ChangeLeft(i)
+    }
   }
   // const [isShow, setIsShow] = useState('true')
   //给每个图片盒子添加上动画，在切换盒子的时候使用
@@ -63,22 +58,40 @@ export default function Test() {
 //通过函数来实现对数组的里面元素的重排，从而实现对dom元素的位置更改，实现轮播的效果
 
 //ChangeLast（左箭头函数） 是通过函数将数组先前一位
-  const ChangeLast = (i) => {
-    console.log('123')
+  const ChangeLeft = (i) => {
+    console.log(i)
     let temp = showList.slice()
-    temp[i] = showList[i + 5]
-    temp[i + 5] = showList[i]
+    temp[i] = showList[5  ]
+    temp.splice(5, 1)
+    temp.push(showList[i])
     setShowList(temp)
     // leftRotate()
+    if (i < 4) {
+      const num = i + 1
+      setI(num)
+    } else {
+      setI(0)
+    }
   }
 
 //ChangeNext（右箭头函数） 是通过函数将数组向前一位
-  const ChangeNext = () => {
-    let text = showList[showImg.length - 1]
-    let temp = showList.slice()
-    temp.splice(temp.length - 1, 1)
-    temp.unshift(text)
-    setShowList(temp)
+  const ChangeRight = (i) => {
+    console.log(i)
+    if (i == 0) {
+      let temp = showList.slice()
+      temp[4] = showList[showList.length - 1]
+      temp.pop()
+      temp.splice(5, 0, showList[4])
+      setShowList(temp)
+      setI(4)
+    } else {
+      let temp = showList.slice()
+      temp[i - 1] = showList[showList.length - 1]
+      temp.pop()
+      temp.splice(5, 0, showList[i - 1])
+      setShowList(temp)
+      setI(i - 1)
+    }
   }
 
 //ChangeList（点击图片排序到中心） 是通过函数还有传递过的index位置来对数组进行重新排序，从而实现点击的dom元素都在轮播图的中间的效果
